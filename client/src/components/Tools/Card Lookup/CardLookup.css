@@ -1,0 +1,111 @@
+.card-lookup__container {
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.card-lookup__search-container {
+    border: none;
+}
+
+.card-lookup__search-input {
+    height: 4vh;
+    width: 30vw;
+    text-align: center;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 3vh;
+    font-style: bold;
+    font-variant: normal
+}
+
+.card-lookup__search-input:focus {
+    outline: none;
+}
+
+.card-lookup__search-img {
+    cursor: pointer;
+
+
+
+
+    height: 4vh;
+    width: 2.5vw;
+    display: inline-block;
+    vertical-align: top;
+
+
+
+}
+
+.card-lookup__card-result {
+    color: white;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-lookup__card-result img {
+    height: 45vh;
+    margin: 0 auto;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    gap: .3rem;
+}
+
+.card-lookup__card-details {
+    margin: 0 auto;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    gap: .3rem;
+    grid-template-columns: repeat(2, 2fr);
+
+    width: 70vw;
+    height: 45vh;
+
+    overflow-y: auto;
+
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+
+
+}
+
+.card-lookup__card-details h3 {
+    font-size: 1.5vw;
+    font-size: 1.5vh;
+
+
+}
+
+.card-lookup__card-details h4 {
+    font-size: 1.5vw;
+    font-size: 1.5vh;
+}
+
+.card-lookup__image-flip {
+    width: 5vw;
+    height: 7vh;
+    cursor: pointer;
+
+
+
+    padding: 1px;
+
+}
+
+.card-lookup__image-flip:hover {
+    background-color: rgb(185, 185, 185);
+
+
+}

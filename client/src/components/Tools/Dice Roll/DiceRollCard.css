@@ -1,0 +1,53 @@
+.dice__roll__card-card img {
+    width: 70px;
+    height: 70px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+}
+
+.dice__roll__card-card img:hover {
+    cursor: pointer;
+    background-color: rgb(185, 185, 185);
+}
+
+.dice__roll__card-card h2 {
+    font-size: medium;
+    color: white;
+}
+
+@media (max-width: 290px) {
+    .dice__roll__card-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .dice__roll__card-card h2 {
+        font-size: small;
+    }
+}
+
+@media (min-width: 600px) {
+    .dice__roll__card-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .dice__roll__card-card h2 {
+        font-size: medium;
+    }
+}
+
+@media (min-width: 1080px) {
+    .dice__roll__card-card img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .dice__roll__card-card h2 {
+        font-size: large;
+    }
+}

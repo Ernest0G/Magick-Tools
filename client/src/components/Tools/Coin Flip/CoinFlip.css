@@ -1,0 +1,117 @@
+.coin__flip-container {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.coin__flip-container img:hover {
+    cursor: pointer;
+}
+
+
+.coin__flip-container h2 {
+    color: white;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 10vh;
+
+    overflow-x: hidden;
+}
+
+
+.coin__flip-animation {
+    animation: coin-pop 0.3s linear 1;
+
+}
+
+@keyframes coin-pop {
+    50% {
+        transform: scale(0.5);
+    }
+}
+
+/* SCREEN SIZE RESPONSIVENESS -> Small to Larger Screen Sizes */
+@media (min-width:280px) {
+    .coin__flip-container h2 {
+        font-size: 6vh;
+    }
+
+    .coin__flip-container img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+
+@media (min-width:320px) {
+    .coin__flip-container h2 {
+        font-size: 7vh;
+    }
+
+    .coin__flip-container img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width:360px) {
+    .coin__flip-container h2 {
+        font-size: 7vh;
+    }
+
+}
+
+@media (min-width:375px) {
+    .coin__flip-container h2 {
+        font-size: 7vh;
+    }
+
+}
+
+/*For screens 425px wide or smaller*/
+@media (min-width:425px) {
+    .coin__flip-container h2 {
+        font-size: 7vh;
+    }
+
+}
+
+/*For screens 768px wide or smaller*/
+@media (min-width:768px) {
+    .coin__flip-container h2 {
+        font-size: 7vh;
+    }
+
+    .coin__flip-container img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/*For screens 1024px wide or smaller*/
+@media (min-width:1024px) {
+    .coin__flip-container h2 {
+        font-size: 7vh;
+    }
+
+}
+
+@media (min-width:1440px) {
+    .coin__flip-container h2 {
+        font-size: 7vh;
+    }
+
+}
+
+@media (min-width:2560px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .coin__flip-container img {
+        width: 550px;
+        height: 550px;
+    }
+}

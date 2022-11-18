@@ -1,0 +1,142 @@
+.dice__roll-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    justify-items: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 2fr);
+    scrollbar-width: 0px;
+    text-align: center;
+}
+
+.dice__roll-grid h1 {
+    color: white;
+    font-size: 10vh;
+    align-content: center;
+    justify-content: center;
+
+    text-align: center;
+
+    animation: value-pop 0.3s linear 1;
+    outline: none;
+}
+
+.dice__roll-grid h1:hover {
+    cursor: pointer;
+    color: grey;
+}
+
+@keyframes pulse {
+    25% {
+        transform: scale(0.9);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes push {
+    50% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes value-pop {
+    50% {
+        transform: scale(1.5);
+    }
+}
+
+/* SCREEN SIZE RESPONSIVENESS -> Small to Larger Screen Sizes */
+@media (min-width:280px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+@media (min-width:320px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dice__roll-grid h1 {
+        color: white;
+        font-size: 6.2vh;
+    }
+
+}
+
+@media (min-width:360px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dice__roll-grid h1 {
+        font-size: 6.2vh;
+    }
+
+}
+
+@media (min-width:375px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dice__roll-grid h1 {
+        font-size: 6.2vh;
+    }
+
+}
+
+/*For screens 425px wide or smaller*/
+@media (min-width:425px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+
+/*For screens 768px wide or smaller*/
+@media (min-width:768px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/*For screens 1024px wide or smaller*/
+@media (min-width:1024px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dice__roll-grid h1 {
+        font-size: 7vh;
+    }
+}
+
+@media (min-width:1440px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .dice__roll-grid h1 {
+        font-size: 7vh;
+    }
+}
+
+@media (min-width:2560px) {
+    .dice__roll-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .dice__roll-grid h1 {
+        font-size: 7vh;
+    }
+
+}

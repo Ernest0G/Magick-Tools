@@ -1,0 +1,74 @@
+.modal-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: #72727280;
+    position: fixed;
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1;
+}
+
+.modal-container {
+    width: 70%;
+    height: 75%;
+    margin-top: 1%;
+    border-radius: 12px;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    color: black;
+
+
+
+}
+
+.modal-close__button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-container button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.modal-close__button button {
+    background-color: transparent;
+    color: grey;
+    font-weight: bold;
+    font-size: 4vh;
+
+    border: none;
+}
+
+.modal-title {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 2vh;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.modal-body {
+    overflow-y: auto;
+    color: white;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid gray;
+}
