@@ -11,7 +11,6 @@ const CardLookup = () => {
     const [showLoading, setShowLoading] = useState(false);
 
     const [card, setCard] = useState({});
-    const [data, setData] = useState({});
     const [suggestions, setSuggestions] = useState([]);
     const [error, setError] = useState('');
 
@@ -39,29 +38,25 @@ const CardLookup = () => {
 
 
 
-
-    const searchCardHandler = async () => {
+    const searchCardHandler = async (e) => {
+        e.preventDefault();
         await fetch(`http://localhost:5000/searchcard/${cardSearch}`, { method: 'GET' })
-            .then(setShowLoading(true))
-            .then(data => data.json())
-            .then(data => setData({ data }))
-            .then(setCard({
-                name: data.data.name,
-                cost: data.data.manaCost,
-                text: data.data.originalText,
-                type: data.data.type,
-                set: data.data.set,
-                convertedCost: data.data.cmc,
-                image: data.data.imageUrl
+            .then(response => response.json())
+            .then(response => setCard({
+                name: response.name,
+                cost: response.manaCost,
+                text: response.originalText,
+                type: response.type,
+                set: response.set,
+                convertedCost: response.cmc,
+                image: response.imageUrl
             }))
-            .then(() => {
-                if (showCardImage === true) {
-                    setShowCardImage(false)
-                }
-            })
 
-            .then(setShowLoading(false))
-            .then(setCardShowDetail(true))
+        if (showCardImage === true) {
+            setShowCardImage(false);
+        }
+
+        setCardShowDetail(true);
 
     };
 
@@ -77,26 +72,24 @@ const CardLookup = () => {
 
     return (
         <div className='card-lookup__container'>
-            <div className='card-lookup__seach-container'>
-                <input className='card-lookup__search-input' onChange={searchTypingHandler} />
-                <img
-                    src={
-                        showLoading === true ?
-                            require('../../../assets/images/card-load.png') :
-                            require('../../../assets/images/card-search.png')
-                    }
-                    className='card-lookup__search-img'
-                    onClick={searchCardHandler} />
-            </div>
+            <form className='card-lookup__seach-container' onSubmit={searchCardHandler}>
+                <input
+                    className='card-lookup__search-input'
+                    value={cardSearch}
+                    onChange={searchTypingHandler}
+                />
+                <button id='card-lookup__submit-button'>
+                    Submit
+                </button>
+            </form>
 
             <div className='card-lookup__card-result' >
                 {showCardImage === true ? <img alt={card.name} src={card.image} /> :
                     <div className='card-lookup__card-details'>
                         {cardShowDetail &&
                             <React.Fragment>
-
                                 <h3>Card Name:</h3>
-                                <h4>{card.name}</h4>
+                                {card === null ? <h4>CARD NOT FOUND</h4> : <h4>{card.name}</h4 >}
                                 <h3>Cost:</h3>
                                 <h4>{card.cost}</h4>
                                 <h3>Type:</h3>
@@ -118,11 +111,9 @@ const CardLookup = () => {
             </div>
 
             {cardShowDetail &&
-                <img
-                    src={require('../../../assets/images/img-flip.png')}
-                    onClick={imageFlipHandler}
-                    className='card-lookup__image-flip'
-                />
+                <button onClick={imageFlipHandler} id='card-lookup__image-flip'>
+                    Flip
+                </button>
             }
 
             <h4>{error}</h4>

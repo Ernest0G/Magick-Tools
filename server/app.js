@@ -36,8 +36,15 @@ app.get("/suggestions/:cardSearched", (req, res) => {
 
 app.get("/searchcard/:cardSearched", (req, res) => {
     const cardToSearch = req.params.cardSearched;
-    mtg.card.where({ name: `${cardToSearch}` })
-        .then(result => {
-            res.json(result[0]);
-        })
+    try {
+        mtg.card.where({ name: `${cardToSearch}` })
+            .then(result => {
+                res.json(result[0]);
+            })
+    } catch (error) {
+        console.log(error);
+        res.json({ name: 'Card not found' });
+
+    }
+
 });

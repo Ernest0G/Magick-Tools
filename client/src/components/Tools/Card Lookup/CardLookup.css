@@ -6,17 +6,42 @@
 
 .card-lookup__search-container {
     border: none;
+
+}
+
+#card-lookup__submit-button {
+    display: inline-block;
+    padding: 10px 15px;
+    width: 7vw;
+    font-size: 20px;
+    border-radius: 0;
+
+    border: 1px solid transparent;
+    background-color: rgb(161, 161, 161);
+    background-image: url('../../../assets/images/card-search.png');
+}
+
+.card-lookup__search-container button:focus {
+    outline: none;
+}
+
+.card-lookup__search-container button:hover {
+    outline: none;
 }
 
 .card-lookup__search-input {
-    height: 4vh;
-    width: 30vw;
-    text-align: center;
+    display: inline-block;
+    padding: 10px 0;
+    width: 25vw;
+    font-size: 20px;
+    border-radius: 0;
+
+    border: 1px solid transparent;
+    background-color: grey;
+    color: white;
 
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 3vh;
-    font-style: bold;
-    font-variant: normal
+    text-align: center;
 }
 
 .card-lookup__search-input:focus {
@@ -93,19 +118,18 @@
     font-size: 1.5vh;
 }
 
-.card-lookup__image-flip {
-    width: 5vw;
-    height: 7vh;
-    cursor: pointer;
+#card-lookup__image-flip {
+    display: inline-block;
+    padding: 10px 15px;
+    width: 4vw;
+    font-size: 15px;
+    border-radius: 0;
 
-
-
-    padding: 1px;
+    border: 1px solid transparent;
+    background-color: rgb(161, 161, 161);
 
 }
 
-.card-lookup__image-flip:hover {
+#card-lookup__image-flip:hover {
     background-color: rgb(185, 185, 185);
-
-
 }
