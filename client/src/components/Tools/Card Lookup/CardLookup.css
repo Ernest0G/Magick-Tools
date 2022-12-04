@@ -51,16 +51,10 @@
 .card-lookup__search-img {
     cursor: pointer;
 
-
-
-
     height: 4vh;
     width: 2.5vw;
     display: inline-block;
     vertical-align: top;
-
-
-
 }
 
 .card-lookup__card-result {

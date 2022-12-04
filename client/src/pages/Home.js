@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 import './Home.css'
-import { Card, DiceRoll, Modal, CoinFlip, RandNumber, LifeCounter, Calculator, Notes, CardLookup } from '../components/index'
+import { Card, DiceRoll, Modal, CoinFlip, RandNumber, LifeCounterOptions, Calculator, Notes, CardLookup } from '../components/index'
 
 const Home = () => {
     const [openDiceModal, setOpenDiceModal] = useState(false);
@@ -12,6 +12,11 @@ const Home = () => {
     const [openNotesModal, setOpenNotesModal] = useState(false);
     const [openCalcModal, setOpenCalcModal] = useState(false);
     const [openLifeOptions, setOpenLifeOptions] = useState(false);
+    const [lifeTotal, setLifeTotal] = useState(40);
+
+    const handleLifeChange = (value) => {
+        setLifeTotal(lifeTotal + value);
+    };
 
     return (
         <div className='home-container__main'>
@@ -21,7 +26,7 @@ const Home = () => {
             {openCardLookupModal && <Modal closeModal={setOpenCardLookupModal} title='Card Lookup' description=' ' body={<CardLookup />} />}
             {openCalcModal && <Modal closeModal={setOpenCalcModal} title='Calculator' description=' ' body={<Calculator />} />}
             {openNotesModal && <Modal closeModal={setOpenNotesModal} title='Notes' description=' ' body={<Notes />} />}
-            {openLifeOptions && <Modal closeModal={setOpenLifeOptions} title='Life Counter Options' body={<LifeCounter />} />}
+            {openLifeOptions && <Modal setLife={setLifeTotal} closeModal={setOpenLifeOptions} title='Life Counter Options' body={<LifeCounterOptions />} />}
 
 
             <div className='home-container-slide'>
@@ -46,15 +51,23 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <h4>LIFE COUNTER</h4>
             <div className='home-container__life-counter'>
-                <button className='home-button__life-change' id='minus-10-button'>-10</button>
-                <button className='home-button__life-change' id='minus-5-button'>-5</button>
-                <button className='home-button__life-change' id='minus-1-button'>-1</button>
-                <button className='home-button__life-change' id='home-button__total-life' onClick={() => { setOpenLifeOptions(true) }}>40</button>
-                <button className='home-button__life-change' id='plus-1-button'>+1</button>
-                <button className='home-button__life-change' id='plus-5-button'>+5</button>
-                <button className='home-button__life-change' id='plus-10-button'>+10</button>
+                <div className="home-life-counter__main">
+                    <div className="home-life-counter__left">
+                        <h3 onClick={() => handleLifeChange(-10)}>-10</h3>
+                        <h3 onClick={() => handleLifeChange(-5)}>-5</h3>
+                        <h3 onClick={() => handleLifeChange(-1)}>-1</h3>
+                    </div>
+                    <div className="home-life-counter__middle">
+                        <h1 id="home-life-counter__life-total">{lifeTotal}</h1>
+                        <button id="home-life-counter__life-options" onClick={() => setOpenLifeOptions(true)}> Options</button>
+                    </div>
+                    <div className="home-life-counter__right">
+                        <h3 onClick={() => handleLifeChange(10)}>+10</h3>
+                        <h3 onClick={() => handleLifeChange(5)}>+5</h3>
+                        <h3 onClick={() => handleLifeChange(1)}>+1</h3>
+                    </div>
+                </div>
             </div>
 
         </div>
